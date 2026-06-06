@@ -1,0 +1,1 @@
+{"scripts":{"start":"node server.js","dev":"node server.js","build":"echo \"Static site - no build step required\""},"dependencies":{"@fastify/static":"latest","fastify":"latest"},"devDependencies":{},"engines":{"node":">=20"}}
