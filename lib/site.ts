@@ -66,10 +66,11 @@ export const portfolio: PortfolioProject[] = [
     description:
       "An offline-friendly collection of six classic road-trip games for iPhone and iPad, with local multiplayer, scoring, and playful retro-Americana design.",
     results: ["Live on the Apple App Store", "Six family road-trip games", "Offline-first local play"],
-    image: "/portfolio/wander-wagon.webp",
-    imageAlt: "Wander Wagon game selection screen showing six colorful road-trip games",
-    visualClass: "bg-[#1d1916]",
-    href: "https://apps.apple.com/us/app/wander-wagon-road-trip-games/id6759113156",
+    image: "/portfolio/wander-wagon.png",
+    imageAlt: "Wander Wagon app icon featuring Dusty the dog beside a packed station wagon",
+    imageClass: "object-contain p-12 md:p-20",
+    visualClass: "bg-[radial-gradient(circle_at_top,#b7dce3_0%,#e7d5a9_54%,#8f3c26_100%)]",
+    href: "https://apps.apple.com/us/app/wander-wagon-road-trip-games/id6775979031",
     linkLabel: "View on the App Store",
   },
   {
