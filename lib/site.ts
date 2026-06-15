@@ -44,33 +44,68 @@ export const services = [
   },
 ];
 
-export const portfolio = [
+export type PortfolioProject = {
+  title: string;
+  category: string;
+  status: "Live" | "In development";
+  description: string;
+  results: string[];
+  image: string;
+  imageAlt: string;
+  imageClass?: string;
+  visualClass?: string;
+  href?: string;
+  linkLabel?: string;
+};
+
+export const portfolio: PortfolioProject[] = [
   {
-    title: "Heritage Trail Outfitters",
-    category: "Commerce experience",
+    title: "Wander Wagon: Road Trip Games",
+    category: "Family travel games",
+    status: "Live",
     description:
-      "A poster-inspired storefront and booking flow for a regional outdoor outfitter, pairing seasonal campaigns with inventory-aware trip planning.",
-    results: ["38% lift in inquiry conversion", "Sub-second route transitions", "Reusable campaign templates"],
-    image: "/illustrations/portfolio-outfitters.webp",
-    imageAlt: "Vintage poster illustration of a canoe and tent beside a mountain river",
+      "An offline-friendly collection of six classic road-trip games for iPhone and iPad, with local multiplayer, scoring, and playful retro-Americana design.",
+    results: ["Live on the Apple App Store", "Six family road-trip games", "Offline-first local play"],
+    image: "/portfolio/wander-wagon.webp",
+    imageAlt: "Wander Wagon game selection screen showing six colorful road-trip games",
+    visualClass: "bg-[#1d1916]",
+    href: "https://apps.apple.com/us/app/wander-wagon-road-trip-games/id6759113156",
+    linkLabel: "View on the App Store",
   },
   {
-    title: "Foundry Table Co.",
-    category: "Operations platform",
+    title: "Paidly.To",
+    category: "Bill management app",
+    status: "In development",
     description:
-      "A production dashboard for a custom furniture shop that centralizes estimates, material purchasing, and delivery scheduling.",
-    results: ["12 hours saved weekly", "Unified quote pipeline", "Role-based team views"],
-    image: "/illustrations/portfolio-foundry.webp",
-    imageAlt: "Vintage poster illustration of a furniture workshop and production flow",
+      "A privacy-first bill management app for iOS and Android with local encrypted storage, bill scanning, reminders, optional bank linking, and secure device sync.",
+    results: ["Privacy-first bill tracking", "Encrypted device sync", "Optional bank linking"],
+    image: "/portfolio/paidly.png",
+    imageAlt: "Paidly app icon with a checkmark over a stack of bills",
+    imageClass: "object-contain p-16 md:p-24",
+    visualClass: "bg-[radial-gradient(circle_at_top,#392c73_0%,#17102d_58%,#0d0a1b_100%)]",
   },
   {
-    title: "Commonwealth Health Collective",
-    category: "Service website + automation",
+    title: "WordNest",
+    category: "Early literacy app",
+    status: "In development",
     description:
-      "A warm, trustworthy service site connected to intake automations, newsletter segmentation, and practice-growth reporting.",
-    results: ["2.4x more qualified leads", "Automated intake routing", "Accessible design system"],
-    image: "/illustrations/portfolio-health.webp",
-    imageAlt: "Vintage poster illustration of welcoming paths leading to a woodland health lodge",
+      "A playful ELA learning app for Kindergarten and First Grade covering phonics, sight words, leveled reading, writing, vocabulary, and progress tracking.",
+    results: ["Kindergarten + Grade 1 ELA", "Five core literacy domains", "Guided learning progress"],
+    image: "/portfolio/wordnest.webp",
+    imageAlt: "WordNest learning dashboard with an owl guide and colorful literacy activities",
+    imageClass: "object-cover object-left",
+    visualClass: "bg-[#dce9c5]",
+  },
+  {
+    title: "HackDay",
+    category: "Casual golf companion",
+    status: "In development",
+    description:
+      "A mobile product in development for Sunday casual golfers, designed to make the game feel simpler, more social, and more approachable.",
+    results: ["Built for casual golfers", "Mobile-first product", "Relaxed weekend play"],
+    image: "/portfolio/hackday.webp",
+    imageAlt: "Illustrated golf bag beside a welcoming public golf course in warm afternoon light",
+    visualClass: "bg-[#203428]",
   },
 ];
 

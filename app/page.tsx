@@ -193,15 +193,25 @@ export default function Home() {
           </div>
           <Link href="/portfolio" className="text-sm font-bold uppercase tracking-[0.14em] text-forest">View all work →</Link>
         </div>
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-x-7 gap-y-12 md:grid-cols-2">
           {portfolio.map((project) => (
             <article key={project.title} className="group border-t border-ink/20 pt-5">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
-                <Image src={project.image} alt={project.imageAlt} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover transition duration-500 group-hover:scale-[1.025]" />
+              <div className={`relative aspect-[4/3] overflow-hidden rounded-lg ${project.visualClass ?? ""}`}>
+                <Image src={project.image} alt={project.imageAlt} fill sizes="(min-width: 768px) 50vw, 100vw" className={`${project.imageClass ?? "object-cover"} transition duration-500 group-hover:scale-[1.025]`} />
               </div>
-              <p className="mt-5 text-xs font-bold uppercase tracking-[0.2em] text-copper">{project.category}</p>
+              <div className="mt-5 flex flex-wrap items-center gap-3">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-copper">{project.category}</p>
+                <span className={`rounded-full px-2.5 py-1 text-[0.62rem] font-black uppercase tracking-[0.14em] ${project.status === "Live" ? "bg-forest text-paper" : "border border-ink/15 text-forest"}`}>
+                  {project.status}
+                </span>
+              </div>
               <h3 className="mt-2 font-serif text-2xl font-semibold text-forest">{project.title}</h3>
               <p className="mt-3 leading-7 text-ink/70">{project.description}</p>
+              {project.href && (
+                <a href={project.href} target="_blank" rel="noreferrer" className="mt-4 inline-flex border-b border-forest pb-1 text-xs font-bold uppercase tracking-[0.14em] text-forest">
+                  {project.linkLabel} ↗
+                </a>
+              )}
             </article>
           ))}
         </div>
