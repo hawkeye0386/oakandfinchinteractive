@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHeader } from "@/components/PageHeader";
 import { site } from "@/lib/site";
 
@@ -37,20 +38,25 @@ export default function ContactPage() {
           </label>
           <button className="btn-primary" type="submit">Send project note</button>
         </form>
-        <aside className="card rounded-[2rem] p-7 md:p-10">
-          <p className="text-sm font-black uppercase tracking-[0.22em] text-copper">Direct line</p>
-          <div className="mt-6 grid gap-5 text-lg font-bold text-forest">
-            <a href={`mailto:${site.email}`}>{site.email}</a>
-            <a href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}>{site.phone}</a>
-            <p>{site.location}</p>
+        <aside className="card overflow-hidden rounded-[2rem]">
+          <div className="relative aspect-[4/3]">
+            <Image src="/illustrations/contact-outpost.webp" alt="Welcoming illustrated studio outpost at the meeting point of woodland trails" fill sizes="(min-width: 768px) 36vw, calc(100vw - 2rem)" className="object-cover" />
           </div>
-          <div className="mt-10 rounded-3xl bg-forest p-6 text-paper">
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-gold">Good fit projects</p>
-            <ul className="mt-4 grid gap-3 text-sm leading-6 text-paper/78">
-              <li>• Premium marketing sites and brand systems</li>
-              <li>• Custom portals, dashboards, and internal tools</li>
-              <li>• Automation that removes operational bottlenecks</li>
-            </ul>
+          <div className="p-7 md:p-10">
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-copper">Direct line</p>
+            <div className="mt-6 grid gap-5 text-lg font-bold text-forest">
+              <a href={`mailto:${site.email}`}>{site.email}</a>
+              <a href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}>{site.phone}</a>
+              <p>{site.location}</p>
+            </div>
+            <div className="mt-10 rounded-3xl bg-forest p-6 text-paper">
+              <p className="text-sm font-black uppercase tracking-[0.2em] text-gold">Good fit projects</p>
+              <ul className="mt-4 grid gap-3 text-sm leading-6 text-paper/78">
+                <li>• Premium marketing sites and brand systems</li>
+                <li>• Custom portals, dashboards, and internal tools</li>
+                <li>• Automation that removes operational bottlenecks</li>
+              </ul>
+            </div>
           </div>
         </aside>
       </section>

@@ -1,14 +1,21 @@
+import Image from "next/image";
+
 export function PosterPanel() {
   return (
-    <div className="card poster-lines relative min-h-[420px] overflow-hidden rounded-[2rem] p-6">
-      <div className="absolute inset-x-8 top-8 h-40 rounded-t-full poster-sun" />
-      <div className="mountain-mask absolute inset-x-0 bottom-24 h-56 bg-forest" />
-      <div className="mountain-mask absolute inset-x-0 bottom-16 h-48 bg-pine" />
-      <div className="absolute inset-x-0 bottom-0 h-32 bg-oak" />
-      <div className="absolute bottom-8 left-8 right-8 rounded-2xl border border-paper/25 bg-forest/84 p-5 text-paper shadow-2xl backdrop-blur">
+    <figure className="card illustration-frame relative min-h-[440px] overflow-hidden rounded-[2rem]">
+      <Image
+        src="/illustrations/hero-oak-and-finch.webp"
+        alt="Oak tree and finch overlooking a mountain trail that becomes an elegant digital system"
+        fill
+        priority
+        sizes="(min-width: 768px) 46vw, calc(100vw - 2rem)"
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-forest/80 via-transparent to-transparent" />
+      <figcaption className="absolute bottom-6 left-6 right-6 rounded-2xl border border-paper/25 bg-forest/84 p-5 text-paper shadow-2xl backdrop-blur">
         <p className="text-xs font-black uppercase tracking-[0.22em] text-gold">Field notes</p>
         <p className="mt-2 text-2xl font-black tracking-[-0.04em]">Software with roots, rhythm, and reach.</p>
-      </div>
-    </div>
+      </figcaption>
+    </figure>
   );
 }

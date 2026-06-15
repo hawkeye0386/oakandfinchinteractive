@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHeader } from "@/components/PageHeader";
 import { SectionHeading } from "@/components/SectionHeading";
 
@@ -19,10 +20,15 @@ export default function AboutPage() {
     <>
       <PageHeader eyebrow="About" title="A small studio for ambitious, grounded teams." description="Oak & Finch Interactive exists for organizations that value craft, clarity, and software that keeps serving long after launch day." />
       <section className="container grid gap-10 pb-16 md:grid-cols-[.9fr_1.1fr] md:pb-24">
-        <div className="card poster-lines rounded-[2rem] p-8">
-          <p className="text-sm font-black uppercase tracking-[0.22em] text-copper">Studio point of view</p>
-          <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] text-forest">National Park poster soul. Modern product discipline.</h2>
-        </div>
+        <figure className="card overflow-hidden rounded-[2rem]">
+          <div className="relative aspect-[4/3] min-h-80">
+            <Image src="/illustrations/about-studio.webp" alt="Illustrated design studio with sketches, an oak branch, and a finch overlooking Pennsylvania hills" fill sizes="(min-width: 768px) 42vw, calc(100vw - 2rem)" className="object-cover" />
+          </div>
+          <figcaption className="p-7">
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-copper">Studio point of view</p>
+            <h2 className="mt-4 text-3xl font-black tracking-[-0.05em] text-forest">National Park poster soul. Modern product discipline.</h2>
+          </figcaption>
+        </figure>
         <div className="space-y-5 text-lg leading-8 text-ink/72">
           <p>
             Our visual direction borrows from the optimism and structure of vintage American travel art: bold silhouettes, warm paper tones, grounded colors, and a sense that every detail has a purpose.

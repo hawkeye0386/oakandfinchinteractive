@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { PageHeader } from "@/components/PageHeader";
 import { SectionHeading } from "@/components/SectionHeading";
 import { processSteps, services } from "@/lib/site";
@@ -17,18 +18,23 @@ export default function ServicesPage() {
       <section className="container pb-16 md:pb-24">
         <div className="grid gap-6">
           {services.map((service) => (
-            <article key={service.title} className="card grid gap-8 rounded-[2rem] p-7 md:grid-cols-[.75fr_1fr] md:p-10">
-              <div>
-                <p className="text-sm font-black uppercase tracking-[0.22em] text-copper">{service.eyebrow}</p>
-                <h2 className="mt-4 text-3xl font-black tracking-[-0.05em] text-forest md:text-5xl">{service.title}</h2>
+            <article key={service.title} className="card overflow-hidden rounded-[2rem]">
+              <div className="relative aspect-[16/7] min-h-64 overflow-hidden">
+                <Image src={service.image} alt={service.imageAlt} fill sizes="(min-width: 768px) 1120px, calc(100vw - 2rem)" className="object-cover" />
               </div>
-              <div>
-                <p className="text-lg leading-8 text-ink/72">{service.description}</p>
-                <ul className="mt-6 grid gap-3 sm:grid-cols-3">
-                  {service.points.map((point) => (
-                    <li key={point} className="rounded-2xl border border-ink/10 bg-cream/70 p-4 text-sm font-bold text-forest">{point}</li>
-                  ))}
-                </ul>
+              <div className="grid gap-8 p-7 md:grid-cols-[.75fr_1fr] md:p-10">
+                <div>
+                  <p className="text-sm font-black uppercase tracking-[0.22em] text-copper">{service.eyebrow}</p>
+                  <h2 className="mt-4 text-3xl font-black tracking-[-0.05em] text-forest md:text-5xl">{service.title}</h2>
+                </div>
+                <div>
+                  <p className="text-lg leading-8 text-ink/72">{service.description}</p>
+                  <ul className="mt-6 grid gap-3 sm:grid-cols-3">
+                    {service.points.map((point) => (
+                      <li key={point} className="rounded-2xl border border-ink/10 bg-cream/70 p-4 text-sm font-bold text-forest">{point}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </article>
           ))}

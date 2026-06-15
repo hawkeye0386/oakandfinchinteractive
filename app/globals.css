@@ -108,6 +108,12 @@ a {
   backdrop-filter: blur(12px);
 }
 
+.illustration-frame {
+  box-shadow:
+    0 30px 80px rgba(23, 63, 53, 0.2),
+    0 0 0 8px rgba(255, 249, 238, 0.45);
+}
+
 .btn-primary,
 .btn-secondary {
   display: inline-flex;

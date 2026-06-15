@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { PageHeader } from "@/components/PageHeader";
 import { portfolio } from "@/lib/site";
 
@@ -16,9 +17,9 @@ export default function PortfolioPage() {
       <section className="container grid gap-7 pb-16 md:pb-24">
         {portfolio.map((project, index) => (
           <article key={project.title} className="card overflow-hidden rounded-[2rem] md:grid md:grid-cols-[.8fr_1.2fr]">
-            <div className="poster-lines relative min-h-72 bg-forest p-8 text-paper">
-              <div className="poster-sun h-28 w-28 rounded-full" />
-              <div className="mountain-mask absolute inset-x-0 bottom-0 h-40 bg-pine" />
+            <div className="relative min-h-80 overflow-hidden bg-forest text-paper md:min-h-[34rem]">
+              <Image src={project.image} alt={project.imageAlt} fill sizes="(min-width: 768px) 38vw, calc(100vw - 2rem)" className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-forest/75 via-transparent to-transparent" />
               <p className="absolute bottom-8 left-8 text-6xl font-black tracking-[-0.08em] text-paper/90">0{index + 1}</p>
             </div>
             <div className="p-7 md:p-10">

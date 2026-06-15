@@ -21,6 +21,8 @@ export const services = [
     description:
       "Fast, expressive marketing sites with durable content architecture, conversion-focused page flows, and a visual language your team can keep using.",
     points: ["Information architecture", "Responsive UI systems", "SEO-ready App Router builds"],
+    image: "/illustrations/service-websites.webp",
+    imageAlt: "Poster-style woodland trailhead with a carefully organized map and visual system",
   },
   {
     title: "Custom Applications",
@@ -28,6 +30,8 @@ export const services = [
     description:
       "Purpose-built web apps that replace brittle spreadsheets, unify workflows, and give your customers a polished digital front door.",
     points: ["Product discovery", "Dashboards and portals", "Secure API integrations"],
+    image: "/illustrations/service-applications.webp",
+    imageAlt: "Poster-style craft workshop where modular pieces connect into a working system",
   },
   {
     title: "Automation & AI Enablement",
@@ -35,6 +39,8 @@ export const services = [
     description:
       "Human-centered automations that remove repeated work, connect your systems, and introduce AI where it makes measurable business sense.",
     points: ["Workflow mapping", "CRM and ops automation", "AI-assisted service tooling"],
+    image: "/illustrations/service-automation.webp",
+    imageAlt: "Poster-style mountain waterways converging through gates to power a waterwheel",
   },
 ];
 
@@ -45,6 +51,8 @@ export const portfolio = [
     description:
       "A poster-inspired storefront and booking flow for a regional outdoor outfitter, pairing seasonal campaigns with inventory-aware trip planning.",
     results: ["38% lift in inquiry conversion", "Sub-second route transitions", "Reusable campaign templates"],
+    image: "/illustrations/portfolio-outfitters.webp",
+    imageAlt: "Vintage poster illustration of a canoe and tent beside a mountain river",
   },
   {
     title: "Foundry Table Co.",
@@ -52,6 +60,8 @@ export const portfolio = [
     description:
       "A production dashboard for a custom furniture shop that centralizes estimates, material purchasing, and delivery scheduling.",
     results: ["12 hours saved weekly", "Unified quote pipeline", "Role-based team views"],
+    image: "/illustrations/portfolio-foundry.webp",
+    imageAlt: "Vintage poster illustration of a furniture workshop and production flow",
   },
   {
     title: "Commonwealth Health Collective",
@@ -59,6 +69,8 @@ export const portfolio = [
     description:
       "A warm, trustworthy service site connected to intake automations, newsletter segmentation, and practice-growth reporting.",
     results: ["2.4x more qualified leads", "Automated intake routing", "Accessible design system"],
+    image: "/illustrations/portfolio-health.webp",
+    imageAlt: "Vintage poster illustration of welcoming paths leading to a woodland health lodge",
   },
 ];
 

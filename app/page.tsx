@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { PosterPanel } from "@/components/PosterPanel";
 import { SectionHeading } from "@/components/SectionHeading";
 import { portfolio, processSteps, services } from "@/lib/site";
@@ -42,10 +43,15 @@ export default function Home() {
         <SectionHeading eyebrow="What we build" title="Digital systems with a handcrafted point of view." description="Every engagement combines sharp product thinking, carefully composed interfaces, and dependable technical foundations." />
         <div className="grid gap-6 md:grid-cols-3">
           {services.map((service) => (
-            <article key={service.title} className="card rounded-[1.75rem] p-7">
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-copper">{service.eyebrow}</p>
-              <h3 className="mt-4 text-2xl font-black tracking-[-0.04em] text-forest">{service.title}</h3>
-              <p className="mt-4 leading-7 text-ink/70">{service.description}</p>
+            <article key={service.title} className="card group overflow-hidden rounded-[1.75rem]">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image src={service.image} alt={service.imageAlt} fill sizes="(min-width: 768px) 33vw, calc(100vw - 2rem)" className="object-cover transition duration-500 group-hover:scale-[1.03]" />
+              </div>
+              <div className="p-7">
+                <p className="text-xs font-black uppercase tracking-[0.2em] text-copper">{service.eyebrow}</p>
+                <h3 className="mt-4 text-2xl font-black tracking-[-0.04em] text-forest">{service.title}</h3>
+                <p className="mt-4 leading-7 text-ink/70">{service.description}</p>
+              </div>
             </article>
           ))}
         </div>
@@ -53,7 +59,7 @@ export default function Home() {
 
       <section className="bg-forest py-16 text-paper md:py-24">
         <div className="container">
-          <SectionHeading eyebrow="Our trail map" title="A calm, clear path from idea to launch." description="We keep the process transparent so your team always knows what is happening, why it matters, and what comes next." />
+          <SectionHeading inverse eyebrow="Our trail map" title="A calm, clear path from idea to launch." description="We keep the process transparent so your team always knows what is happening, why it matters, and what comes next." />
           <div className="grid gap-5 md:grid-cols-4">
             {processSteps.map((step, index) => (
               <article key={step.title} className="rounded-3xl border border-paper/15 bg-paper/8 p-6">
@@ -70,10 +76,15 @@ export default function Home() {
         <SectionHeading eyebrow="Selected outcomes" title="Built for businesses with real-world momentum." />
         <div className="grid gap-6 lg:grid-cols-3">
           {portfolio.map((project) => (
-            <article key={project.title} className="card rounded-[1.75rem] p-7">
-              <p className="text-xs font-black uppercase tracking-[0.2em] text-copper">{project.category}</p>
-              <h3 className="mt-4 text-2xl font-black tracking-[-0.04em] text-forest">{project.title}</h3>
-              <p className="mt-4 leading-7 text-ink/70">{project.description}</p>
+            <article key={project.title} className="card group overflow-hidden rounded-[1.75rem]">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image src={project.image} alt={project.imageAlt} fill sizes="(min-width: 1024px) 33vw, calc(100vw - 2rem)" className="object-cover transition duration-500 group-hover:scale-[1.03]" />
+              </div>
+              <div className="p-7">
+                <p className="text-xs font-black uppercase tracking-[0.2em] text-copper">{project.category}</p>
+                <h3 className="mt-4 text-2xl font-black tracking-[-0.04em] text-forest">{project.title}</h3>
+                <p className="mt-4 leading-7 text-ink/70">{project.description}</p>
+              </div>
             </article>
           ))}
         </div>
