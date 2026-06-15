@@ -36,14 +36,14 @@ export const metadata: Metadata = {
     title: "Oak & Finch Interactive | Boutique Software Consultancy",
     description:
       "Premium websites, software, automation, and digital product strategy for small businesses and ambitious teams.",
-    images: [{ url: "/illustrations/hero-oak-and-finch.webp", width: 1536, height: 1024, alt: "Oak & Finch Interactive illustrated mountain landscape" }],
+    images: [{ url: "/illustrations/hero-editorial-v2.webp", width: 1680, height: 945, alt: "Oak & Finch Interactive illustrated Pennsylvania river valley" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Oak & Finch Interactive | Boutique Software Consultancy",
     description:
       "Americana-inspired digital products engineered for modern businesses.",
-    images: ["/illustrations/hero-oak-and-finch.webp"],
+    images: ["/illustrations/hero-editorial-v2.webp"],
   },
   robots: {
     index: true,
